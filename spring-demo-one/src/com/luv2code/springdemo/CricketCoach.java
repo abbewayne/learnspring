@@ -2,6 +2,10 @@ package com.luv2code.springdemo;
 
 public class CricketCoach implements Coach {
 
+	private String emailAddress;
+	
+	
+	
 	private FortuneService fortuneService;
 	
 	// create a no-arg constructor
