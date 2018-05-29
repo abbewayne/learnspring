@@ -27,6 +27,10 @@
     	
     	<!-- set up setter injection -->
     	<property name="fortuneService" ref="myFortuneService" />
+    	
+    	<!-- inject literal values -->
+    	<property name="emailAddress" value="wayneliu@gmail.com" />
+    	<property name="team" value="Sunrisers Hyderabad"/>
     </bean>
 </beans>
 
