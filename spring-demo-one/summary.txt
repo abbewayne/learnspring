@@ -45,6 +45,9 @@ Injection types two common: 1. Constructor Injection. 2. Setter Injection !!// t
 Setter Injection:
 1. Create setter method(s) in class for injections. 2. Configure the dependency injection in Srping config file
 
-Injecting Literal Values:
+Injecting Literal Values in class:
 1. Create setter methods in class for injections.: create private fields, create setter methods.
 2. Configure the injection in Spring config file.
+
+Inject literal values from property files:
+1.create properties file. 2. load properties file in spring config file. 3. reference values from properties file.
