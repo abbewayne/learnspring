@@ -51,3 +51,11 @@ Injecting Literal Values in class:
 
 Inject literal values from property files:
 1.create properties file. 2. load properties file in spring config file. 3. reference values from properties file.
+
+Bean Scopes:
+1. Scope refers to the lifecycle of a bean. 2. 
+
+Bean Scope: Singleton:
+1. Spring Container creates only one instance of the bean, by default.
+2. It is cached in memory.
+3. All requests for the bean, will return a SHARED reference to the SAME bean.
