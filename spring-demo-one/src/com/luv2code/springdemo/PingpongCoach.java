@@ -22,4 +22,13 @@ public class PingpongCoach implements Coach {
 		return fortuneService.getFortune();
 	}
 
+	// exercise for bean scope and init destroy methods
+	
+	public void pStart() {
+		System.out.println("init for pingpong");
+	}
+	
+	public void pDestroy() {
+		System.out.println("destroy method");
+	}
 }
