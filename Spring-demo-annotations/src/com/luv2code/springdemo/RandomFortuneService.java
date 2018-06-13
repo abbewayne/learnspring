@@ -29,7 +29,12 @@ public class RandomFortuneService implements FortuneService {
 		data[1] = luck2;
 		data[2] = luck3;
 	}
-	
+	/*
+	@PostConstruct
+	public void doMyStartupStuff() {
+		System.out.println(">> TennisCoach: inside fortuneservice of doMyStartupStuff()");
+	}
+	*/
 	//private String[] data = {luck1, luck2, luck3};
 	
 	
