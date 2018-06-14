@@ -22,7 +22,7 @@ public class RandomFortuneService implements FortuneService {
 	@Value("${lucky3}")
 	private String luck3;
 	
-	@PostConstruct
+
 	public void setupMyData() {
 		
 		data[0] = luck1;
