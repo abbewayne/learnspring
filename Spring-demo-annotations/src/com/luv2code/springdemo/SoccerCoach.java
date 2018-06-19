@@ -4,6 +4,10 @@ public class SoccerCoach implements Coach {
 
 	private FortuneService fortuneService;
 	
+	public SoccerCoach(FortuneService theFortuneService) {
+		fortuneService = theFortuneService;
+	}
+	
 	@Override
 	public String getDailyWorkout() {
 		return "Run 2k and play defense & attack";
@@ -11,8 +15,7 @@ public class SoccerCoach implements Coach {
 
 	@Override
 	public String getDailyFortune() {
-		// TODO Auto-generated method stub
-		return null;
+		return fortuneService.getFortune();
 	}
 
 }
