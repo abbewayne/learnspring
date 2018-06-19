@@ -2,6 +2,8 @@ package com.luv2code.springdemo;
 
 public class SoccerCoach implements Coach {
 
+	private FortuneService fortuneService;
+	
 	@Override
 	public String getDailyWorkout() {
 		return "Run 2k and play defense & attack";
