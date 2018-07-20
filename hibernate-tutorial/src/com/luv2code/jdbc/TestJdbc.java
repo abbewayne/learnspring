@@ -1,5 +1,6 @@
 package com.luv2code.jdbc;
 
+import java.sql.Connection;
 import java.sql.DriverManager;
 
 import javax.swing.plaf.synth.SynthSeparatorUI;
@@ -16,7 +17,7 @@ public class TestJdbc {
 			
 			Connection myConn = DriverManager.getConnection(jdbcUrl, user, pass);
 			
-			System.out.println("Connection successful");
+			System.out.println("Connection successful!!!");
 		}
 		catch (Exception exc) {
 			exc.printStackTrace();
