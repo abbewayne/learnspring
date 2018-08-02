@@ -2,6 +2,8 @@ package com.luv2code.hibernate.demo.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -10,6 +12,7 @@ import javax.persistence.Table;
 public class Employee {
 
 	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="id")
 	private int id;
 	
@@ -22,9 +25,11 @@ public class Employee {
 	@Column(name="company")
 	private String company;
 
-	public Employee() {
+	public Employee(String firstName, String lastName, String company) {
 		super();
-		// TODO Auto-generated constructor stub
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.company = company;
 	}
 
 	public int getId() {
