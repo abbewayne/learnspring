@@ -4,7 +4,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
-import com.luv2code.hibernate.demo.entity.Student;
+import com.luv2code.hibernate.demo.entity.Employee;
 
 public class ReadEmployeeDemo {
 
@@ -20,39 +20,21 @@ public class ReadEmployeeDemo {
 		Session session = factory.getCurrentSession();
 		
 		try {
-			// use the session object to save Java object
 			
-			// create a student object
-			System.out.println("Creating new student object...");
-			Student tempStudent = new Student("Daffyl", "Duck", "daffy@luv2code.com");
-			
-			// start a transaction
-			session.beginTransaction();
-			
-			// save the student object
-			System.out.println("Saving the student...");
-			System.out.println(tempStudent);
-			session.save(tempStudent);
-			
-			// commit transaction
-			session.getTransaction().commit();
 			
 			// My new code
 			
-			// find out the student's id: primary key
-			
-			System.out.println("Saved student.Generated id:" + tempStudent.getId());
 			
 			// now get a new session and start transaction
 			session = factory.getCurrentSession();
 			session.beginTransaction();
 			
 			// retrieve student based on the id: primary key
-			System.out.println("\nGetting student with id: " + tempStudent.getId());
+			System.out.println("\nGetting employee with id: " + 1);
 			
-			Student myStudent = session.get(Student.class, tempStudent.getId());
+			Employee myEmployee = session.get(Employee.class, 1);
 			
-			System.out.println("Get complete: " + myStudent);
+			System.out.println("Get complete: " + myEmployee);
 			
 			// commit the transaction
 			session.getTransaction().commit();

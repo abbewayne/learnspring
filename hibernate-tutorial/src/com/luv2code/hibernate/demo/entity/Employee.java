@@ -25,6 +25,10 @@ public class Employee {
 	@Column(name="company")
 	private String company;
 
+	public Employee() {
+		
+	}
+	
 	public Employee(String firstName, String lastName, String company) {
 		super();
 		this.firstName = firstName;
