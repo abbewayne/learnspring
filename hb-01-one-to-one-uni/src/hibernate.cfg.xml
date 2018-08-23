@@ -8,9 +8,9 @@
 
         <!-- JDBC Database connection settings -->
         <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
-        <property name="connection.url">jdbc:mysql://localhost:3306/hw_employee_tracker?useSSL=false?serverTimezone=UTC</property>
-        <property name="connection.username">hwemployee</property>
-        <property name="connection.password">hwemployee</property>
+        <property name="connection.url">jdbc:mysql://localhost:3306/hb-01-one-to-one-uni?useSSL=false?serverTimezone=UTC</property>
+        <property name="connection.username">hbstudent</property>
+        <property name="connection.password">hbstudent</property>
         
         <!-- for hbstudent 
         <property name="connection.url">jdbc:mysql://localhost:3306/hb_student_tracker?useSSL=false</property>
