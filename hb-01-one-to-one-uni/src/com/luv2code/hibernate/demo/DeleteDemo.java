@@ -8,7 +8,7 @@ import com.luv2code.hibernate.demo.entity.Instructor;
 import com.luv2code.hibernate.demo.entity.InstructorDetail;
 import com.luv2code.hibernate.demo.entity.Student;
 
-public class CreateDemo {
+public class DeleteDemo {
 
 	public static void main(String[] args) {
 		
@@ -24,34 +24,24 @@ public class CreateDemo {
 		
 		try {
 			
-			// create the objects
-			/*Instructor tempInstructor = 
-					new Instructor("Chad", "Darby", "darby@luv2code.com");
 			
-			InstructorDetail tempInstructorDetail = 
-					new InstructorDetail(
-							"http://www.luv2code.com/youtube",
-							"Luv 2 code!!!");*/
-			Instructor tempInstructor = 
-					new Instructor("Wayne", "Abbe", "wayneabbe@luv2code.com");
-			
-			InstructorDetail tempInstructorDetail = 
-					new InstructorDetail(
-							"http://www.youtube.com",
-							"Baseball");
-			
-			// associate the objects
-			tempInstructor.setInstructorDetail(tempInstructorDetail);
 			// start a transaction
 			session.beginTransaction();
 			
-			// save the instructor
-			//
-			// Note: this will ALSO save the details object
-			// because of CascadeType.ALL
-			// 
-			System.out.println("Saving instructor" + tempInstructor);
-			session.save(tempInstructor);
+			// get instructor by primary key/id
+			int theId = 1;
+			Instructor tempInstructor =
+					session.get(Instructor.class, theId);
+			
+			System.out.println("Found instrurctor: " + tempInstructor);
+			// delete the instructors
+			if (tempInstructor != null) {
+				System.out.println("Deleting " + tempInstructor);
+				
+				// Note: delete associated "detail" object
+				// because of CascadeType.ALL
+				session.delete(tempInstructor);
+			}
 			
 			// commit transaction
 			session.getTransaction().commit();
