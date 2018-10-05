@@ -6,7 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.luv2code.springdemo.entity.Customer;
 import com.luv2code.springdemo.service.CustomerService;
@@ -27,7 +30,7 @@ public class CustomerController {
 		// get customers from the DAO
 		List<Customer> theCustomers = customerService.getCustomers();
 		
-		// add the customeres to the model
+		// add the customers to the model
 		theModel.addAttribute("customers", theCustomers);
 		
 		
@@ -36,7 +39,7 @@ public class CustomerController {
 	@GetMapping("/showFormForAdd")
 	public String showFormForAdd(Model theModel) {
 		
-		// create model attibute to bind from data
+		// create model attribute to bind from data
 		Customer theCustomer = new Customer();
 		
 		theModel.addAttribute("customer", theCustomer);
@@ -44,4 +47,29 @@ public class CustomerController {
 		
 		return "customer-form";
 	}
+	
+	@PostMapping("/saveCustomer")
+	public String saveCustomer(@ModelAttribute("customer") Customer theCustomer) {
+		
+		// save the customer using our service
+		customerService.saveCustomer(theCustomer);
+		
+		return "redirect:/customer/list";
+	}
+	
+	@GetMapping("/showFormForUpdate")
+	public String showFormForUpdate(@RequestParam("customerId") int theId, Model theModel) {
+		
+		// get the customer from the service
+		Customer theCustomer = customerService.getCustomer(theId);
+		
+		// set customer as as model attribute to pre-populate the form
+		
+		theModel.addAttribute("customer", theCustomer);
+		
+		// send over to form
+		return "customer-form";
+	}
+	
+	
 }
